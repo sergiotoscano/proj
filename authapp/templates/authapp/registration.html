@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% load static %}
+  {% block body_block %}
+ 
+    <div class="jumbotron">
+      {% if registered %}    
+        <h1>Thanks for registering!</h1>
+      {% else %}
+        <h1>Register here<h1>
+        <h1>Fill out the form<h1>
+
+        <form method='POST' enctype='multipart/form-data'> <!--we need the enctype for image upload work-->
+          
+          {% csrf_token %}
+          <div class="container">
+            {{ user_form.as_p }} <!--the name user_form is dictated on the views.py-->
+            {{ profile_form.as_p }}
+            <input type="submit" value="Register" name="">
+          </div>
+        </form>
+
+      {% endif %}
+    
+    </div>
+
+  {% endblock %}

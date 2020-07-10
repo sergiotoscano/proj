@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% block body_block %}
+
+  {% load static %}
+
+    <h1>Hi this is a random picture</h1>
+    <h2>go to /formpage to fill out the form</h2>
+
+    {{ insert_me }}
+
+    <img src="{% static 'img/download-1.jpg' %}" alt="uh oh, didnt show">
+
+    <div class="djangotable">
+      {% if access_record %} 
+        <table>
+          <thead>
+            <th> Site Name</th>
+            <th>Date Accessed</th>
+          </thead>
+
+          {% for i in access_record %}
+          <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+        <p>NO ACCESS RECORD FOUND</p>
+        {% endif %}
+    </div> 
+
+  {% endblock %}

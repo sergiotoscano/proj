@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "home/base.html" %}
+  {% block body_block %}
+    {% load static %}
+  
+    <div class="container">
+    
+        <div class="jumbotron"> 
+            <h1>Please login</h1>
+            <div class="container"> 
+                <form method='POST' action="{% url 'authapp:loginauthapp' %}">
+            
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" placeholder="Enter username">
+
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+
+                    <input type="submit" value="Login" name="">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    </div>
+
+  {% endblock %}

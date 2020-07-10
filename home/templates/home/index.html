@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% block body_block %}
+
+    <div class="jumbotron justify-content-center">
+      <h1 class="display-3 txt">Welcome to Django Project</h1>
+      <p class="lead pt-3 pb-4 txt">Feel free to choose below on what you feel like doing...</p>
+      <hr>
+      <div class="flexbuttons">
+        <a class="btn btn-primary btn-lg" href="{% url 'firstappns:indexfirstapp' %}" role="button">First app</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'firstappns:formfirstapp' %}" role="button">Form page</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'waitinglistns:waitinglistindex' %}" role="button">Waiting list</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'authappns:registerauthapp' %}" role="button">Register Now!</a>
+      </div>
+    </div>
+
+  {% endblock %}

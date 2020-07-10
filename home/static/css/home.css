@@ -1,0 +1,41 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column
+
+}
+
+.btn {
+    width: auto;
+
+
+}
+
+.txt {
+    margin: auto;
+}
+
+img {
+    width: 220px;
+
+}
+
+.flexbuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin: 15px 0 40px 40px;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 50%;               
+    background-color: darkgray;
+    height: 1px;
+  }

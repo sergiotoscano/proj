@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- bootstrap minified css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+  </head>
+  <body>
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container"
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a class="nav-link" href="{% url 'homens:homeindex' %}">Home <span class="sr-only">(current)</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+            
+            {% if user.is_authenticated  %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'authappns:logoutauthapp' %}">Logout</a></li>            
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'authappns:loginauthapp' %}">Login</a></li>
+            {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        {% block body_block %}
+        {% endblock %}
+
+  </body>
+</html>
