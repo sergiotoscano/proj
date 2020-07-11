@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from authapp.views import user_login
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -26,4 +25,5 @@ urlpatterns = [
     path('home/', include('home.urls', namespace="homens")),
     path('waitinglist/', include('waitinglist.urls', namespace="waitinglistns")),
     path('authapp/', include('authapp.urls', namespace='authappns')),
+    path('schoolapp/', include('schoolapp.urls', namespace='schoolappns')),
 ]

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% block body_block %}
+
+  {% load static %}
+  <div class="jumbotron">
+    <h1>Testing template view</h1>
+        <h2><a href="{% url 'schoolappns:schoollist' %}">Click here</a>to go to schools list</h2>
+    </div>
+
+  {% endblock %}

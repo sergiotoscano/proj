@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% block body_block %}
+
+  {% load static %}
+    <div class="jumbotron">
+        <h1>Welcome to the list of schools</h1>
+        <ol>
+            {% for school in schools %} <!--schools refers to views.py context_object_name-->
+                <h2> <a href="{{ school.id }}"> <li>{{ school.name }}</h2></li>
+            {% endfor %}
+        </ol>
+    </div>
+
+  {% endblock %}

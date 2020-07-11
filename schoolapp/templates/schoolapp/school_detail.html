@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% extends "home/base.html" %}
+  {% block body_block %}
+
+  {% load static %}
+    <div class="jumbotron">
+        <h1>Welcome to School details</h1>
+        <h2>School details:</h2>
+
+        <p>Name: {{ school_detail.name }} </p>
+        <p>Principal: {{ school_detail.principal }} </p>
+        <p>Location: {{ school_detail.location }} </p>
+
+        <h3>Students:</h3>
+        {% for student in school_detail.students.all %} <!--relates to models.py related_name='students'-->
+        <p>{{student.name}} who is {{student.age}} years old.</p>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <p><a class="btn btn-warning" href="{% url 'schoolapp:schoolupdate' pk=school_detail.pk %}">Update</a></p>
+    </div>
+    
+    <div class="container">
+        <p><a class="btn btn-danger" href="{% url 'schoolapp:schooldelete' pk=school_detail.pk %}">Delete</a></p>
+    </div>
+
+  {% endblock %}

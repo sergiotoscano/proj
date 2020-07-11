@@ -27,9 +27,7 @@ SECRET_KEY = 's)l#56rauzpgnf2d)+4su6c+l764)#s2kq4y^2s#b=ve-w@(na'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'sergiotoscano.pythonanywhere.com'
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,7 +42,8 @@ INSTALLED_APPS = [
     'firstapp',
     'home',
     'waitinglist',
-    'authapp'
+    'authapp',
+    'schoolapp',
 ]
 
 MIDDLEWARE = [
